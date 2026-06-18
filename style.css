@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap');
+
+:root {
+    --bg-color: #050508;
+    --bg-darker: #020204;
+    --blue-neon: #00f0ff;
+    --yellow-neon: #ffe600;
+    --text-main: #e2e8f0;
+    --text-muted: #64748b;
+    --border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Скидання базових стилів */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rajdhani', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* Анімація появи контенту при завантаженні сторінки */
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.grid-container, .section-container {
+    animation: fadeInPage 0.6s ease-out forwards;
+}
+
+/* Навігація */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(5, 5, 8, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo span { color: var(--blue-neon); text-shadow: 0 0 10px rgba(0, 240, 255, 0.4); }
+.logo span.tab { color: var(--yellow-neon); text-shadow: 0 0 10px rgba(255, 230, 0, 0.4); }
+
+nav ul { display: flex; list-style: none; gap: 30px; }
+nav ul li { position: relative; }
+
+nav ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    padding: 5px 0;
+}
+
+/* Ефект неонової лінії під посиланням */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--blue-neon);
+    box-shadow: 0 0 10px var(--blue-neon);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after, 
+nav ul li a.active::after { 
+    width: 100%; 
+}
+
+nav ul li a.active {
+    color: #fff; 
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); 
+}
+nav ul li a:hover {
+    color: var(--blue-neon);
+}
+
+/* Іконка Бургера */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 110;
+}
+.burger-menu span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+/* Анімація перетворення бургера в хрестик */
+.burger-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); background-color: var(--blue-neon); }
+.burger-active span:nth-child(2) { opacity: 0; }
+.burger-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background-color: var(--blue-neon); }
+
+/* Спільні секції */
+.section-container {
+    padding: 100px 10%;
+    border-bottom: 1px solid var(--border-color);
+}
+.bg-darker { background-color: var(--bg-darker); }
+
+.section-header { margin-bottom: 50px; }
+.section-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+.system-code {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+/* Hero Section */
+.grid-container { display: grid; grid-template-columns: 1fr 1fr; height: 100vh; }
+.pane { display: flex; align-items: center; padding: 0 10%; position: relative; }
+.pane-left { background: linear-gradient(135deg, rgba(5,15,35,0.95), rgba(10,25,50,0.85)); border-right: 1px solid rgba(0,240,255,0.1); }
+.pane-right { background: linear-gradient(135deg, rgba(20,18,0,0.95), rgba(35,30,2,0.85)); }
+.pane::before {
+    content: 'ONETAB // NODE_SYS'; position: absolute; bottom: 30px;
+    font-family: 'Orbitron', sans-serif; font-size: 11px; letter-spacing: 2px; opacity: 0.15;
+}
+.pane-left::before { left: 50px; color: var(--blue-neon); }
+.pane-right::before { right: 50px; color: var(--yellow-neon); content: 'ONETAB // SEC_02'; }
+.content { max-width: 480px; }
+.pane-left .system-code { color: var(--blue-neon); }
+.pane-right .system-code { color: var(--yellow-neon); }
+h1 { font-family: 'Orbitron', sans-serif; font-size: 48px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+.pane-left h1 { border-left: 4px solid var(--blue-neon); padding-left: 15px; }
+.pane-right h1 { border-left: 4px solid var(--yellow-neon); padding-left: 15px; }
+p { font-size: 16px; color: #94a3b8; line-height: 1.6; margin-bottom: 30px; }
+
+/* Кнопки */
+.action-btn {
+    display: inline-block; padding: 15px 35px; font-family: 'Orbitron', sans-serif;
+    font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px;
+    text-decoration: none; transition: 0.3s;
+}
+.btn-blue { color: #fff; border: 1px solid var(--blue-neon); clip-path: polygon(0 0, 85% 0, 100% 30%, 100% 100%, 15% 100%, 0 70%); }
+.btn-blue:hover { background: var(--blue-neon); color: #000; box-shadow: 0 0 20px var(--blue-neon); }
+.btn-yellow { color: #fff; border: 1px solid var(--yellow-neon); clip-path: polygon(0 0, 85% 0, 100% 30%, 100% 100%, 15% 100%, 0 70%); }
+.btn-yellow:hover { background: var(--yellow-neon); color: #000; box-shadow: 0 0 20px var(--yellow-neon); }
+
+/* Картки послуг та ігор */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.service-card {
+    background: linear-gradient(180deg, #09090e 0%, #050508 100%); 
+    padding: 40px; 
+    border: 1px solid var(--border-color);
+    clip-path: polygon(0 0, 92% 0, 100% 15%, 100% 100%, 0 100%);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.service-card h3 { font-family: 'Orbitron', sans-serif; font-size: 22px; margin-bottom: 15px; text-transform: uppercase; }
+.card-blue h3 { color: var(--blue-neon); }
+.card-yellow h3 { color: var(--yellow-neon); }
+
+/* Ефект неонового підсвічування меж при наведенні */
+.service-card.card-blue:hover {
+    border-color: var(--blue-neon);
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+    transform: translateY(-5px);
+}
+.service-card.card-yellow:hover {
+    border-color: var(--yellow-neon);
+    box-shadow: 0 0 25px rgba(255, 230, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+/* Маленький декоративний куточок для карток */
+.service-card::after {
+    content: ''; position: absolute; top: 0; right: 0; width: 10px; height: 10px; background: var(--border-color); transition: background 0.3s;
+}
+.service-card.card-blue:hover::after { background: var(--blue-neon); }
+.service-card.card-yellow:hover::after { background: var(--yellow-neon); }
+
+/* Пропозиції */
+.offers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 900px; margin: 0 auto; }
+.offer-card { background: #09090e; border: 1px solid var(--border-color); padding: 40px; position: relative; text-align: center; }
+.offer-card.featured { border: 1px solid var(--yellow-neon); box-shadow: inset 0 0 15px rgba(255,230,0,0.05); }
+.package-type { font-family: 'Orbitron', sans-serif; font-size: 20px; text-transform: uppercase; margin-bottom: 10px; }
+.price { font-family: 'Orbitron', sans-serif; font-size: 38px; font-weight: 900; margin-bottom: 25px; }
+.price span { font-size: 14px; color: var(--text-muted); }
+.offer-card ul { list-style: none; text-align: left; margin-bottom: 35px; }
+.offer-card ul li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.02); color: #94a3b8; font-size: 15px; }
+.offer-card ul li::before { content: "› "; color: var(--blue-neon); font-weight: bold; }
+
+/* Відгуки */
+.reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.review-box { background: rgba(255,255,255,0.02); padding: 30px; border-left: 3px solid var(--text-muted); }
+.review-box .comment { font-style: italic; color: #cbd5e1; margin-bottom: 15px; }
+.review-box .user { font-family: 'Orbitron', sans-serif; font-size: 13px; color: var(--blue-neon); }
+
+/* Локація та Специфікації */
+.location-block { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.location-info h3 { font-family: 'Orbitron', sans-serif; font-size: 24px; margin-bottom: 15px; }
+.location-info p { margin-bottom: 15px; }
+.location-info .address { font-size: 18px; color: #fff; margin-bottom: 5px; }
+.location-info .coords { font-family: 'Orbitron', sans-serif; color: var(--blue-neon); font-size: 14px; margin-bottom: 15px; }
+.status .online { color: #00ff66; font-weight: bold; text-shadow: 0 0 10px rgba(0,255,102,0.4); }
+.map-placeholder { background: #09090e; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; position: relative; padding: 20px; }
+.terminal-map { width: 100%; font-family: 'Orbitron', sans-serif; font-size: 13px; color: var(--text-muted); }
+.terminal-map p { font-family: 'Orbitron', monospace; font-size: 14px; line-height: 1.8; margin-bottom: 8px; letter-spacing: 1px; text-align: left; }
+.terminal-map p:before { content: '>> '; color: var(--text-muted); }
+.terminal-map p.flashing { color: var(--yellow-neon); animation: flash 1.5s infinite; margin-bottom: 10px; }
+.terminal-map p.flashing:before { content: '● '; }
+
+@keyframes flash { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+/* Футер */
+footer { padding: 40px 50px; background: var(--bg-darker); border-top: 1px solid var(--border-color); }
+.footer-content { display: flex; justify-content: space-between; align-items: center; }
+.footer-content .copy { font-family: 'Orbitron', sans-serif; font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
+
+/* Адаптивність */
+@media (max-width: 992px) {
+    header { padding: 15px 25px; }
+    
+    .burger-menu { display: flex; }
+    
+    /* Мобільна навігація */
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(2, 2, 4, 0.98);
+        border-left: 1px solid rgba(0, 240, 255, 0.2);
+        backdrop-filter: blur(20px);
+        padding: 120px 40px;
+        transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        z-index: 105;
+    }
+    
+    nav.nav-active {
+        right: 0;
+    }
+    
+    nav ul { 
+        flex-direction: column; 
+        gap: 40px; 
+    }
+    
+    nav ul li a {
+        font-size: 22px;
+    }
+    
+    nav ul li a::after {
+        bottom: -5px;
+    }
+
+    .auth-btn { 
+        margin-left: auto;
+        margin-right: 20px;
+    }
+    
+    .grid-container, .reviews-grid, .location-block, .services-grid { grid-template-columns: 1fr; }
+    .pane { height: 50vh; padding-top: 100px; }
+    .section-container { padding: 60px 5%; }
+    h1 { font-size: 36px; }
+    .terminal-map p { font-size: 12px; }
+}
