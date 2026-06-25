@@ -3,137 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>onetab — Next-Gen Gaming Hub</title>
+    <title>HARDCORE GAMING CLUB</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <div class="logo">one<span>.</span><span class="tab">tab</span></div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Terminal</a></li>
-                <li><a href="games.html">Games</a></li>
-                <li><a href="about.html">About System</a></li>
-            </ul>
-        </nav>
-        <button class="auth-btn">Access</button>
-    </header>
+    <nav class="navbar">
+        <div class="nav-logo-block">
+            <i class="fa-solid fa-shield-halved nav-vector-icon"></i>
+            <span class="logo-text">HARDCORE</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="#about">Про клуб</a></li>
+            <li><a href="#zones">Ігрові зони</a></li>
+            <li><a href="#prices">Тарифи</a></li>
+            <li><a href="#reviews">Відгуки</a></li>
+        </ul>
 
-    <section id="hero" class="grid-container">
-        <div class="pane pane-left">
-            <div class="content">
-                <div class="system-code">// sector_01 . launch_protocol</div>
-                <h1>Миттєвий <br>Доступ</h1>
-                <p>Пряме підключення до ігрових серверів без посередників. Жодних лаунчерів. Тільки чистий код та висока продуктивність.</p>
-                <a href="#services" class="action-btn btn-blue">Ініціювати</a>
-            </div>
+        <div class="nav-cta">
+            <button class="btn-nav open-modal-btn">Забронювати ПК</button>
         </div>
-        <div class="pane pane-right">
-            <div class="content">
-                <div class="system-code">// sector_02 . core_synced</div>
-                <h1>Єдина <br>Екосистема</h1>
-                <p>Твій персональний цифровий профіль. Синхронізація сесій, статистика в реальному часі та повний контроль над прогресом.</p>
-                <a href="#offers" class="action-btn btn-yellow">Долучитись</a>
-            </div>
-        </div>
-    </section>
+    </nav>
 
-    <section id="services" class="section-container">
-        <div class="section-header">
-            <div class="system-code">// system . core_services</div>
-            <h2>Наші послуги</h2>
-        </div>
-        <div class="services-grid">
-            <div class="service-card card-blue">
-                <h3>Cloud Gaming</h3>
-                <p>Стрімінг топових ігор на будь-який пристрій без втрати FPS через наші потужні сервери.</p>
-            </div>
-            <div class="service-card card-yellow">
-                <h3>Cyber Arena</h3>
-                <p>Організація та проведення онлайн-турнірів із власним призовим фондом та автоматичною статистикою.</p>
-            </div>
-            <div class="service-card card-blue">
-                <h3>Dev Sandbox</h3>
-                <p>Хостинг та інструменти для незалежних розробників браузерних ігор.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="offers" class="section-container bg-darker">
-        <div class="section-header">
-            <div class="system-code">// system . data_packages</div>
-            <h2>Актуальні пропозиції</h2>
-        </div>
-        <div class="offers-grid">
-            <div class="offer-card">
-                <div class="package-type">Base ID</div>
-                <div class="price">0 ₴<span>/міс</span></div>
-                <ul>
-                    <li>Доступ до 50+ браузерних ігор</li>
-                    <li>Базова статистика профілю</li>
-                    <li>Рекламні блоки системи</li>
-                </ul>
-                <a href="#" class="action-btn btn-blue">Обрати</a>
-            </div>
-            <div class="offer-card featured">
-                <div class="package-type">Cyber Pass</div>
-                <div class="price">299 ₴<span>/міс</span></div>
-                <ul>
-                    <li>Пріоритетний хмарний доступ</li>
-                    <li>Участь у закритих турнірах</li>
-                    <li>Zero Ads (Без реклами)</li>
-                    <li>Кастомні скіни для профілю</li>
-                </ul>
-                <a href="#" class="action-btn btn-yellow">Активувати</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="reviews" class="section-container">
-        <div class="section-header">
-            <div class="system-code">// network . user_feedback</div>
-            <h2>Відгуки операторів</h2>
-        </div>
-        <div class="reviews-grid">
-            <div class="review-box">
-                <p class="comment">"Найкращий пінг, який я бачив у браузерних хабах. Інтерфейс максимально чистий, нічого зайвого."</p>
-                <span class="user">// user_alex_k</span>
-            </div>
-            <div class="review-box">
-                <p class="comment">"Турнірний модуль працює ідеально. Організували локальний чемпіонат за 15 хвилин."</p>
-                <span class="user">// user_cyber_shadow</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="location" class="section-container bg-darker">
-        <div class="section-header">
-            <div class="system-code">// gps . main_server_coordinates</div>
-            <h2>Головний штаб</h2>
-        </div>
-        <div class="location-block">
-            <div class="location-info">
-                <h3>Київ, Україна</h3>
-                <p class="address">Вулиця Хрещатик, 22 (Майдан Незалежності)</p>
-                <p class="coords">Координати: 50.4501° N, 30.5234° E</p>
-                <p class="status">Статус вузла: <span class="online">ONLINE</span></p>
-            </div>
-            <div class="map-placeholder">
-                <div class="terminal-map">
-                    <p class="flashing">[ СИСТЕМА ОДЕРЖАННЯ ДАНИХ КАРТИ... ]</p>
-                    <p>ЦЕНТР КИЄВА // ВУЗОЛ_01 ЗАКРІПЛЕНО</p>
+    <header class="hero-section">
+        <div class="hero-blur-accent"></div>
+        <div class="hero-content">
+            
+            <div class="logo-container">
+                <img src="logo.png" alt="Hardcore Gaming Club" class="main-logo" onerror="this.style.display='none'; document.getElementById('fallback-icon').style.display='block';">
+                <div id="fallback-icon" class="main-logo-fallback" style="display: none;">
+                    <i class="fa-solid fa-shield-halved"></i>
                 </div>
             </div>
+            
+            <h1>БЕЗКОМПРОМІСНИЙ ГЕЙМІНГ</h1>
+            <p>Простір для тих, хто цінує максимальний FPS, преміальний комфорт та залізо останнього покоління.</p>
+            <div class="hero-buttons">
+                <a href="#zones" class="btn btn-primary">Обрати зону</a>
+                <a href="#prices" class="btn btn-secondary">Дивитись прайс</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="section-header">
+            <h2>ПРО КЛУБ</h2>
+            <div class="accent-line"></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-card">
+                <i class="fa-solid fa-bolt-lightning"></i>
+                <h3>Низький пінг</h3>
+                <p>Окремо виділена гігабітна лінія інтернет-каналу забезпечує мінімальний відгук у будь-яких онлайн-баталіях.</p>
+            </div>
+            <div class="about-card">
+                <i class="fa-solid fa-wind"></i>
+                <h3>Клімат-контроль</h3>
+                <p>Потужна вентиляція та кондиціонування тримають оптимальну температуру навіть під час жорстких катів.</p>
+            </div>
+            <div class="about-card">
+                <i class="fa-solid fa-gamepad"></i>
+                <h3>Турніри</h3>
+                <p>Регулярно проводимо локальні лан-турніри з дисциплін CS2, Dota 2 та Valorant з крутими призами.</p>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="logo">one<span>.</span><span class="tab">tab</span></div>
-            <p class="copy">&copy; 2026 ONETAB NETWORK. ALL RIGHTS RESERVED // TERMINAL_V2</p>
+    <section id="zones" class="zones-section">
+        <div class="section-header">
+            <h2>ІГРОВІ ПРОСТОРИ</h2>
+            <div class="accent-line"></div>
         </div>
-    </footer>
-    <script src="script.js"></script>
+        
+        <div class="zones-grid">
+            <div class="zone-card">
+                <div class="zone-badge">Популярно</div>
+                <h3>STANDARD ZONE</h3>
+                <ul class="specs-list">
+                    <li><i class="fa-solid fa-microchip"></i> RTX 4070 SUPER</li>
+                    <li><i class="fa-solid fa-processor"></i> Intel i7-14700K</li>
+                    <li><i class="fa-solid fa-desktop"></i> Monitor 240Hz 2K</li>
+                </ul>
+                <button class="btn-card open-modal-btn">Забронювати</button>
+            </div>
+
+            <div class="zone-card VIP">
+                <div class="zone-badge vip-badge">Maximum</div>
+                <h3>VIP ARENA</h3>
+                <ul class="specs-list">
+                    <li><i class="fa-solid fa-microchip"></i> RTX 4090 OC</li>
+                    <li><i class="fa-solid fa-processor"></i> Intel i9-14900KS</li>
+                    <li><i class="fa-solid fa-desktop"></i> Monitor 540Hz PRO</li>
+                </ul>
+                <button class="btn-card btn-vip open-modal-btn">Зарезервувати</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="prices" class="prices-section">
+        <div class="section-header">
+            <h2>ТАРИФИ ТА ПАКЕТИ</h2>
+            <div class="accent-line"></div>
+        </div>
+        
+        <div class="curfew-notice">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span>Увага! Через комендантську годину (00:00 - 05:00) вхід та вихід під час нічного пакету суворо заборонено. Клуб зачиняється зсередини на закриту сесію.</span>
+        </div>
+
+        <div class="prices-table-wrapper">
+            <table class="prices-table">
+                <thead>
+                    <tr>
+                        <th>Час сесії</th>
+                        <th>Standard Zone</th>
+                        <th>VIP Arena</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1 година</td>
+                        <td>80 грн</td>
+                        <td>140 грн</td>
+                    </tr>
+                    <tr>
+                        <td>Пакет "3 години"</td>
+                        <td>220 грн</td>
+                        <td>380 грн</td>
+                    </tr>
+                    <tr>
+                        <td>Пакет "5 годин"</td>
+                        <td>340 грн</td>
+                        <td>590 грн</td>
+                    </tr>
+                    <tr class="night-row">
+                        <td>Ніч (23:00 - 05:00) <span class="lock-label"><i class="fa-solid fa-lock"></i> Закрита сесія</span></td>
+                        <td>390 грн</td>
+                        <td>680 грн</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews-section">
+        <div class="section-header">
+            <h2>ВІДГУКИ ГЕЙМЕРІВ</h2>
+            <div class="accent-line"></div>
+        </div>
+        
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"Залізо просто космос. У VIP кімнаті монік на 540Гц — це щось нереальне, картинка плавна, девайси чисті, не затаскані. Буду ходити сюди постійно."</p>
+                <div class="review-author">Олександр (s1mple_fan)</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"Сподобалося, що в клубі хороша вентиляція, немає цього задушливого запаху, як в інших місцях. Адміни адекватні, допомогли швидко налаштувати конфіг під гру."</p>
+                <div class="review-author">Максим (cyber_king)</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p class="review-text">"Брали з кентами пакет на ніч. Дуже зручно, що через комендантську клуб зачиняють — ніхто лівий не заходить, сидиш суто своєю атмосферою рубаєш всю ніч."</p>
+                <div class="review-author">Дмитро (rage_quit)</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-window">
+            <button class="modal-close-btn" id="closeModalBtn">&times;</button>
+            <div class="modal-header">
+                <h3>БРОНЮВАННЯ МІСЦЯ</h3>
+                <p>Залиш свої дані, і ми закріпимо залізо за тобою</p>
+            </div>
+            <form id="bookingForm" class="modal-form">
+                <div class="form-group">
+                    <label for="userName">Ім'я</label>
+                    <input type="text" id="userName" placeholder="Введіть ваше ім'я" required>
+                </div>
+                <div class="form-group">
+                    <label for="userSurname">Прізвище</label>
+                    <input type="text" id="userSurname" placeholder="Введіть ваше прізвище" required>
+                </div>
+                <div class="form-group">
+                    <label for="userPhone">Номер телефону</label>
+                    <input type="tel" id="userPhone" placeholder="+380" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookingDate">Дата та час сесії</label>
+                    <input type="datetime-local" id="bookingDate" required>
+                </div>
+                <button type="submit" class="btn-submit">Підтвердити заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('bookingModal');
+        const openButtons = document.querySelectorAll('.open-modal-btn');
+        const closeButton = document.getElementById('closeModalBtn');
+        const bookingForm = document.getElementById('bookingForm');
+
+        openButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeButton.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('userName').value;
+            const date = document.getElementById('bookingDate').value;
+            alert(`Дякуємо, ${name}! Місце успішно заброньовано на ${date.replace('T', ' о ')}.`);
+            bookingForm.reset();
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    </script>
+
 </body>
 </html>
