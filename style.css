@@ -1,14 +1,15 @@
 /* ==========================================================================
-   Базові налаштування та змінні
-   ========================================================================== */
+           Базові налаштування та змінні
+           ========================================================================== */
 :root {
-    --color-bg-main: #080808;      
-    --color-bg-card: #121212;      
-    --color-text-bright: #ffffff;  
-    --color-text-muted: #8c8c8c;   
-    --color-accent: #00d1ff;       /* Електричний ціан */
-    --color-accent-dim: #005566;   
-    --border-metal: #1c1c1c;       
+    --color-bg-main: #080808;
+    --color-bg-card: #121212;
+    --color-text-bright: #ffffff;
+    --color-text-muted: #8c8c8c;
+    --color-accent: #00d1ff;
+    /* Електричний ціан */
+    --color-accent-dim: #005566;
+    --border-metal: #1c1c1c;
 }
 
 * {
@@ -46,8 +47,8 @@ body {
 }
 
 /* ==========================================================================
-   Навігація (Navbar)
-   ========================================================================== */
+           Навігація (Navbar)
+           ========================================================================== */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -134,8 +135,8 @@ body {
 }
 
 /* ==========================================================================
-   Головний екран (Hero & Live Badge)
-   ========================================================================== */
+           Головний екран (Hero & Live Badge)
+           ========================================================================== */
 .hero-section {
     min-height: 100vh;
     display: flex;
@@ -170,9 +171,20 @@ body {
 }
 
 @keyframes pulse {
-    0% { transform: scale(0.95); opacity: 0.7; }
-    50% { transform: scale(1.2); opacity: 1; }
-    100% { transform: scale(0.95); opacity: 0.7; }
+    0% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
 }
 
 .hero-blur-accent {
@@ -262,41 +274,67 @@ h1 {
 }
 
 /* ==========================================================================
-   Секції: About & Zones
-   ========================================================================== */
-.about-section, .zones-section, .prices-section, .reviews-section, .gallery-section, .faq-section {
+           Секції: About & Zones
+           ========================================================================== */
+.about-section,
+.zones-section,
+.prices-section,
+.reviews-section,
+.gallery-section,
+.faq-section {
     padding: 100px 8%;
     border-top: 1px solid var(--border-metal);
 }
 
-.zones-section, .reviews-section, .faq-section {
+.zones-section,
+.reviews-section,
+.faq-section {
     background-color: #050505;
 }
 
-.about-grid, .zones-grid, .reviews-grid {
+.about-grid,
+.zones-grid,
+.reviews-grid {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
 }
 
-.about-card, .zone-card, .review-card {
+.about-card,
+.zone-card,
+.review-card {
     background-color: var(--color-bg-card);
     border: 1px solid var(--border-metal);
     padding: 40px 30px;
     width: 340px;
     border-radius: 6px;
+    position: relative;
     transition: all 0.3s ease;
 }
 
-.about-card:hover, .zone-card:hover {
+.about-card:hover,
+.zone-card:hover {
     border-color: var(--color-accent-dim);
     transform: translateY(-5px);
 }
 
-.about-card i { font-size: 32px; color: var(--color-accent); margin-bottom: 20px; }
-.about-card h3 { font-size: 18px; margin-bottom: 15px; }
-.about-card p { font-size: 13px; color: var(--color-text-muted); line-height: 1.6; }
+.about-card i {
+    font-size: 32px;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+}
+
+.about-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.about-card p {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
 
 /* Зони */
 .zone-badge {
@@ -311,9 +349,28 @@ h1 {
     border-radius: 3px;
 }
 
-.specs-list { list-style: none; margin: 30px 0; }
-.specs-list li { margin-bottom: 12px; font-size: 14px; color: var(--color-text-muted); display: flex; gap: 10px; }
-.specs-list i { color: var(--color-accent); }
+.vip-badge {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.specs-list {
+    list-style: none;
+    margin: 30px 0;
+}
+
+.specs-list li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--color-text-muted);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.specs-list i {
+    color: var(--color-accent);
+}
 
 .btn-card {
     width: 100%;
@@ -327,15 +384,30 @@ h1 {
     transition: 0.3s;
 }
 
-.btn-card:hover { background: var(--color-text-bright); color: var(--color-bg-main); }
+.btn-card:hover {
+    background: var(--color-text-bright);
+    color: var(--color-bg-main);
+}
 
-.zone-card.VIP { border-color: var(--color-accent-dim); background: linear-gradient(180deg, #161616 0%, #0d0d0d 100%); }
-.btn-vip { background: transparent; border-color: var(--color-accent-dim); color: var(--color-accent); }
-.btn-vip:hover { background: var(--color-accent); color: var(--color-bg-main); }
+.zone-card.VIP {
+    border-color: var(--color-accent-dim);
+    background: linear-gradient(180deg, #161616 0%, #0d0d0d 100%);
+}
+
+.btn-vip {
+    background: transparent;
+    border-color: var(--color-accent-dim);
+    color: var(--color-accent);
+}
+
+.btn-vip:hover {
+    background: var(--color-accent);
+    color: var(--color-bg-main);
+}
 
 /* ==========================================================================
-   Секція "Галерея"
-   ========================================================================== */
+           Секція "Галерея"
+           ========================================================================== */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -377,12 +449,17 @@ h1 {
     text-transform: uppercase;
 }
 
-.gallery-item:hover img { transform: scale(1.08); }
-.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
 
 /* ==========================================================================
-   Секція Тарифи & FAQ
-   ========================================================================== */
+           Секція Тарифи & FAQ
+           ========================================================================== */
 .curfew-notice {
     max-width: 800px;
     margin: 0 auto 30px auto;
@@ -393,6 +470,9 @@ h1 {
     display: flex;
     align-items: center;
     gap: 15px;
+    color: #ff6b6b;
+    font-size: 13px;
+    line-height: 1.5;
 }
 
 .prices-table-wrapper {
@@ -404,26 +484,107 @@ h1 {
     overflow-x: auto;
 }
 
-.prices-table { width: 100%; border-collapse: collapse; text-align: left; min-width: 500px; }
-.prices-table th, .prices-table td { padding: 18px 25px; font-size: 14px; }
-.prices-table th { background-color: #161616; border-bottom: 1px solid var(--border-metal); }
-.prices-table td { color: var(--color-text-muted); border-bottom: 1px solid #161616; }
+.prices-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 500px;
+}
+
+.prices-table th,
+.prices-table td {
+    padding: 18px 25px;
+    font-size: 14px;
+}
+
+.prices-table th {
+    background-color: #161616;
+    border-bottom: 1px solid var(--border-metal);
+}
+
+.prices-table td {
+    color: var(--color-text-muted);
+    border-bottom: 1px solid #161616;
+}
+
+.lock-label {
+    display: inline-block;
+    font-size: 11px;
+    color: #ff6b6b;
+    margin-left: 8px;
+}
 
 /* FAQ */
-.faq-container { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
-.faq-item { background: var(--color-bg-card); border: 1px solid var(--border-metal); border-radius: 6px; overflow: hidden; }
-.faq-question { padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 700; }
-.faq-question i { transition: transform 0.3s ease; color: var(--color-accent); }
-.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; background: #0a0a0a; color: var(--color-text-muted); font-size: 14px; line-height: 1.6; }
-.faq-item.active .faq-answer { max-height: 150px; padding: 20px 25px; border-top: 1px solid var(--border-metal); }
-.faq-item.active .faq-question i { transform: rotate(180deg); }
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: var(--color-bg-card);
+    border: 1px solid var(--border-metal);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+    color: var(--color-accent);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: #0a0a0a;
+    color: var(--color-text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 150px;
+    padding: 20px 25px;
+    border-top: 1px solid var(--border-metal);
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
 
 /* ==========================================================================
-   Відгуки та Модалка
-   ========================================================================== */
-.review-rating { color: var(--color-accent); margin-bottom: 15px; }
-.review-text { font-style: italic; color: #b3b3b3; margin-bottom: 20px; font-size: 14px; }
-.review-author { font-size: 12px; font-weight: 700; border-left: 2px solid var(--color-accent); padding-left: 10px; }
+           Відгуки та Модалка
+           ========================================================================== */
+.review-rating {
+    color: var(--color-accent);
+    margin-bottom: 15px;
+}
+
+.review-text {
+    font-style: italic;
+    color: #b3b3b3;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.review-author {
+    font-size: 12px;
+    font-weight: 700;
+    border-left: 2px solid var(--color-accent);
+    padding-left: 10px;
+}
 
 .modal-overlay {
     position: fixed;
@@ -440,7 +601,10 @@ h1 {
     padding: 20px;
 }
 
-.modal-overlay.active { opacity: 1; pointer-events: auto; }
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
 
 .modal-window {
     background: var(--color-bg-card);
@@ -452,46 +616,298 @@ h1 {
     position: relative;
 }
 
-.modal-close-btn { position: absolute; top: 15px; right: 20px; background: none; border: none; color: var(--color-text-muted); font-size: 30px; cursor: pointer; }
-.modal-form { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
-.form-group { display: flex; flex-direction: column; gap: 6px; }
-.form-group label { font-size: 11px; text-transform: uppercase; color: var(--color-text-muted); font-weight: 700; }
-.form-group input, .custom-select { background: #090909; border: 1px solid var(--border-metal); padding: 12px 14px; color: white; border-radius: 4px; outline: none; }
-.form-group input:focus, .custom-select:focus { border-color: var(--color-accent); }
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: 30px;
+    cursor: pointer;
+}
 
-.btn-submit { background: var(--color-accent); color: var(--color-bg-main); border: none; padding: 15px; font-weight: 700; text-transform: uppercase; border-radius: 4px; cursor: pointer; transition: 0.3s; }
-.btn-submit:hover { box-shadow: 0 0 15px rgba(0, 209, 255, 0.4); }
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    font-weight: 700;
+}
+
+.form-group input,
+.custom-select {
+    background: #090909;
+    border: 1px solid var(--border-metal);
+    padding: 12px 14px;
+    color: white;
+    border-radius: 4px;
+    outline: none;
+}
+
+.form-group input:focus,
+.custom-select:focus {
+    border-color: var(--color-accent);
+}
+
+.btn-submit {
+    background: var(--color-accent);
+    color: var(--color-bg-main);
+    border: none;
+    padding: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    box-shadow: 0 0 15px rgba(0, 209, 255, 0.4);
+}
 
 /* ==========================================================================
-   АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ (Responsive)
-   ========================================================================== */
-@media (max-width: 992px) {
-    .hamburger { display: block; }
-    
+           Секція Футера (Footer)
+           ========================================================================== */
+.footer-section {
+    background-color: #040404;
+    border-top: 1px solid var(--border-metal);
+    padding: 80px 8% 30px 8%;
+    position: relative;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+}
+
+.footer-brand .nav-logo-block {
+    margin-bottom: 20px;
+}
+
+.footer-desc {
+    color: var(--color-text-muted);
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.footer-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--color-text-bright);
+    background: rgba(0, 255, 102, 0.05);
+    border: 1px solid rgba(0, 255, 102, 0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.footer-info h3,
+.footer-socials h3 {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: var(--color-text-bright);
+    text-transform: uppercase;
+}
+
+.footer-contacts-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-contacts-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--color-text-muted);
+}
+
+.footer-contacts-list i {
+    color: var(--color-accent);
+    font-size: 15px;
+    width: 18px;
+    text-align: center;
+}
+
+.footer-contacts-list a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contacts-list a:hover {
+    color: var(--color-accent);
+}
+
+.socials-subtitle {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--border-metal);
+    color: var(--color-text-bright);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.social-btn i {
+    font-size: 16px;
+}
+
+.social-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 209, 255, 0.15);
+}
+
+.social-btn.telegram:hover {
+    border-color: #0088cc;
+    color: #0088cc;
+}
+
+.social-btn.instagram:hover {
+    border-color: #e1306c;
+    color: #e1306c;
+}
+
+.social-btn.tiktok:hover {
+    border-color: #ff0050;
+    color: #ff0050;
+}
+
+.social-btn.discord:hover {
+    border-color: #5865f2;
+    color: #5865f2;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-metal);
+    padding-top: 25px;
+}
+
+.footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+.footer-legal {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-legal a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: var(--color-accent);
+}
+
+.footer-legal .divider {
+    color: #333;
+}
+
+/* ==========================================================================
+           Адаптивність (Responsive)
+           ========================================================================== */
+@media (max-width: 900px) {
+    .hamburger {
+        display: block;
+    }
+
     .nav-links {
         position: fixed;
-        top: 68px;
+        top: 60px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 68px);
+        height: calc(100vh - 60px);
         background: rgba(8, 8, 8, 0.98);
         flex-direction: column;
         justify-content: center;
         gap: 25px;
-        transition: left 0.4s ease;
-        backdrop-filter: blur(15px);
+        transition: left 0.3s ease;
     }
 
-    .nav-links.active { left: 0; }
-    .nav-links li { margin: 0; }
-    .nav-links a { font-size: 18px; }
-    .nav-cta { display: none; }
-}
+    .nav-links.active {
+        left: 0;
+    }
 
-@media (max-width: 768px) {
-    h1 { font-size: 34px; letter-spacing: 2px; }
-    .hero-content p { font-size: 14px; }
-    .about-card, .zone-card, .review-card { width: 100%; }
-    .section-header h2 { font-size: 26px; }
-    .about-section, .zones-section, .prices-section, .reviews-section, .gallery-section, .faq-section { padding: 60px 5%; }
+    .nav-cta {
+        display: none;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .about-card,
+    .zone-card,
+    .review-card {
+        width: 100%;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .social-links {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
 }

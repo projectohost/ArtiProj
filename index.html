@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HARDCORE GAMING CLUB</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
@@ -266,18 +266,45 @@
         </div>
     </section>
 
+    <!-- ОНОВЛЕНИЙ ФУТЕР -->
     <footer id="contacts" class="footer-section">
-        <div class="footer-content">
+        <div class="footer-container">
+            
             <div class="footer-brand">
                 <div class="nav-logo-block">
                     <i class="fa-solid fa-shield-halved nav-vector-icon"></i>
                     <span class="logo-text">HARDCORE</span>
                 </div>
-                <p>Твій преміальний геймінг-простір. Працюємо 24/7.</p>
+                <p class="footer-desc">
+                    Преміальний геймінг-простір для про-гравців та команд. Максимальний FPS, професійна периферія та безкомпромісна атмосфера 24/7.
+                </p>
+                <div class="footer-status">
+                    <span class="pulse-dot"></span>
+                    <span>Клуб відкритий 24/7</span>
+                </div>
+            </div>
+
+            <div class="footer-info">
+                <h3>КОНТАКТИ</h3>
+                <ul class="footer-contacts-list">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>м. Київ, вул. Хрещатик, 15</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+380991234567">+38 (099) 123-45-67</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:info@hardcore.club">info@hardcore.club</a>
+                    </li>
+                </ul>
             </div>
 
             <div class="footer-socials">
                 <h3>МИ В СОЦМЕРЕЖАХ</h3>
+                <p class="socials-subtitle">Підписуйся, щоб не пропустити анонси турнірів та акції:</p>
                 <div class="social-links">
                     <a href="https://t.me/amudri" target="_blank" class="social-btn telegram" aria-label="Telegram">
                         <i class="fa-brands fa-telegram"></i>
@@ -297,9 +324,18 @@
                     </a>
                 </div>
             </div>
+
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; 2026 HARDCORE GAMING CLUB. Всі права захищені.</p>
+            <div class="footer-bottom-content">
+                <p>&copy; 2026 HARDCORE GAMING CLUB. Всі права захищені.</p>
+                <div class="footer-legal">
+                    <a href="#">Політика конфіденційності</a>
+                    <span class="divider">•</span>
+                    <a href="#">Правила клубу</a>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -339,97 +375,8 @@
         </div>
     </div>
 
-    <script>
-        const TELEGRAM_USERNAME = 'amudri'; // Юзернейм для прямого зв'язку
-
-        // Мобільне меню
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const navLinks = document.getElementById('navLinks');
-
-        hamburgerBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = hamburgerBtn.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-xmark');
-        });
-
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                const icon = hamburgerBtn.querySelector('i');
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-xmark');
-            });
-        });
-
-        // Аккордеон FAQ
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                const isOpen = item.classList.contains('active');
-                faqItems.forEach(i => i.classList.remove('active'));
-                if (!isOpen) item.classList.add('active');
-            });
-        });
-
-        // Модалка
-        const modal = document.getElementById('bookingModal');
-        const openButtons = document.querySelectorAll('.open-modal-btn');
-        const closeButton = document.getElementById('closeModalBtn');
-        const bookingForm = document.getElementById('bookingForm');
-        const phoneInput = document.getElementById('userPhone');
-        const dateInput = document.getElementById('bookingDate');
-
-        const now = new Date();
-        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
-        dateInput.min = now.toISOString().slice(0, 16);
-
-        const closeModal = () => {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        };
-
-        openButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        closeButton.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
-
-        phoneInput.addEventListener('input', (e) => {
-            if (!e.target.value.startsWith('+380')) e.target.value = '+380';
-            e.target.value = e.target.value.replace(/[^\d+]/g, '');
-        });
-
-        // Відправка форми в Telegram @amudri
-        bookingForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('userName').value;
-            const surname = document.getElementById('userSurname').value;
-            const phone = phoneInput.value;
-            const zone = document.getElementById('bookingZone').value;
-            const date = dateInput.value.replace('T', ' о ');
-
-            if (phone.length < 13) {
-                alert('Будь ласка, введіть коректний номер телефону!');
-                return;
-            }
-
-            // Формування тексту для Telegram
-            const textMessage = `Вітаю! Хочу заблокувати ПК:%0A👤 Клієнт: ${name} ${surname}%0A📞 Тел: ${phone}%0A🖥️ Зона: ${zone}%0A📅 Дата/Час: ${date}`;
-            
-            // Відкриття чату з @amudri з готовим повідомленням
-            window.open(`https://t.me/${TELEGRAM_USERNAME}?text=${textMessage}`, '_blank');
-
-            bookingForm.reset();
-            phoneInput.value = '+380';
-            closeModal();
-        });
+    <script src="./main.js">
+        
     </script>
 </body>
 </html>
